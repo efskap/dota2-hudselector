@@ -1,7 +1,7 @@
 dota2-hudselector
 =================
 
-Mods in any Dota 2 HUD as the default. Completely legal, as it simply extracts data from Dota 2's own game files, and disguises it as something else.
+Replaces the default HUD with any other HUD in the game. Completely legal, as it simply extracts data from Dota 2's own game files and then mods it back in.
 
 Uses the excellent [HLExtract tool](http://nemesis.thewavelength.net/index.php?p=35).
 
