@@ -12,6 +12,11 @@ Requirements
 
 So far I only have automatic installation location detection for Windows, but if you manually specify the path to Steam as an argument, it should work on Linux too.
 
+
+Instructions
+===
+Run with python 3, pick your HUD, and then choose "Default HUD" from the shared content menu in-game.
+
 Screenshot
 ===
 ![](http://i.imgur.com/tn6PvKj.png)
