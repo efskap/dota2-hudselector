@@ -38,8 +38,8 @@ def extract_skin(dota_directory, skin_name):
     if not os.path.exists(skin_path):
         raise "%s doesn't exist, but it should!" % (skin_path)
     else:
-        print("success.")
-    print("disguising new HUD as default")
+        print("Success.")
+    print("Disguising new HUD as default")
     os.rename(skin_path,out_path + 'default/')
 
 
@@ -83,9 +83,9 @@ def main():
     while not user_input.isdigit():
         user_input = input("Enter the number of the desired HUD: ")
     skin = skins[int(user_input)]
-    print("begin extracting " + skin)
+    print("Begin extracting " + skin)
     extract_skin(dota_directory, skin)
-    print("done!")
+    print("Done!")
     input("Press enter to exit")
 
 if __name__ == '__main__':
