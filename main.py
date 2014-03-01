@@ -39,7 +39,7 @@ def extract_skin(dota_directory, skin_name):
         raise Exception("%s doesn't exist, but it should! Did extracting go wrong?" % (skin_path))
     else:
         print("Success.")
-    print("Disguising new HUD as default")
+    print("Setting new HUD as default")
     os.rename(skin_path,out_path + 'default/')
 
 
@@ -81,7 +81,7 @@ def main():
     for idx, val in enumerate(skins):
         print("%s. %s" % (idx, val))
     user_input = ''
-    while not user_input.isdigit():
+    while not (user_input.isdigit() and int(user_input) < len(skins)):
         user_input = input("Enter the number of the desired HUD: ")
     skin = skins[int(user_input)]
     print("Begin extracting " + skin)
