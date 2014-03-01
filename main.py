@@ -51,7 +51,7 @@ def get_skin_name(filename):
     filename = filename[len(prefix):]
     if '\\' in filename: #only want the name of the skin root
         return None
-    return filename
+    return str(filename).replace('\r', '')
 
 
 def list_skins(dota_directory):
@@ -59,7 +59,7 @@ def list_skins(dota_directory):
     pipe = Popen(cmd, stdout=PIPE)
     text = pipe.communicate()[0].decode()
     lines = text.split('\n')
-    skins = [get_skin_name(x).replace('\r', '') for x in lines if get_skin_name(x) is not None and get_skin_name(x) is not 'default']
+    skins = [get_skin_name(x) for x in lines if (get_skin_name(x) is not None and get_skin_name(x) != "default")]
     return skins
 
 def main():
