@@ -15,7 +15,7 @@ So far I only have automatic installation location detection for Windows, but if
 
 Instructions
 ===
-Run with python 3, pick your HUD, and then choose "Default HUD" from the shared content menu in-game.
+Run main.py with python 3, pick your HUD, and then choose "Default HUD" from the shared content menu in-game.
 
 To restore the original HUD, just delete this folder:
 
