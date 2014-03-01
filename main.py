@@ -36,7 +36,7 @@ def extract_skin(dota_directory, skin_name):
     print(cmd)
     call(cmd)
     if not os.path.exists(skin_path):
-        raise "%s doesn't exist, but it should!" % (skin_path)
+        raise Exception("%s doesn't exist, but it should! Did extracting go wrong?" % (skin_path))
     else:
         print("Success.")
     print("Disguising new HUD as default")
