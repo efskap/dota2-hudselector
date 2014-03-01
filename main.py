@@ -77,6 +77,7 @@ def main():
     #print(extract_data(dota_directory,'root\\resource\\flash3\\images\\hud_skins'))
     print("Looking for HUDs in Dota 2's data...")
     skins = list_skins(dota_directory)
+    print("Available HUDs:")
     for idx, val in enumerate(skins):
         print("%s. %s" % (idx, val))
     user_input = ''
