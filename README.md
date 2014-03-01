@@ -10,6 +10,8 @@ Requirements
 
 - Python 3
 
+So far I only have automatic installation location detection for Windows, but if you manually specify the path to Steam as an argument, it should work on Linux too.
+
 Screenshot
 ===
 ![](http://i.imgur.com/tn6PvKj.png)
