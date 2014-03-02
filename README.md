@@ -1,6 +1,3 @@
-dota2-hudselector
-=================
-
 Replaces the default HUD with any other HUD in the game. Completely legal, as it simply extracts data from Dota 2's own game files and then mods it back in.
 
 Uses the excellent [HLExtract tool](http://nemesis.thewavelength.net/index.php?p=35).
@@ -21,7 +18,7 @@ To restore the original HUD, just delete this folder:
 
     Steam\steamapps\common\dota 2 beta\dota\resource\flash3\images\hud_skins\default
 
-Screenshot
+Screenshots
 ===
 ![](http://i.imgur.com/tn6PvKj.png)
-
+![](http://i.imgur.com/u4llyqY.jpg)
