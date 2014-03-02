@@ -66,7 +66,7 @@ def list_skins(dota_directory):
     lines = text.split('\n')
     skins = [get_skin_name(x) for x in lines if (get_skin_name(x) is not None and get_skin_name(x) != "default")]
     if os.path.exists(dota_directory + "/resource/flash3/images/hud_skins/default/"):
-        skins.append("[Restore default HUD]")
+        skins.append(RESTORE_DEFAULT_HUD)
     return skins
 
 
