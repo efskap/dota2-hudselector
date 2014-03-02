@@ -14,10 +14,6 @@ Instructions
 ===
 Run main.py with python 3, pick your HUD, and then choose "Default HUD" from the shared content menu in-game.
 
-To restore the original HUD, just delete this folder:
-
-    Steam\steamapps\common\dota 2 beta\dota\resource\flash3\images\hud_skins\default
-
 Screenshots
 ===
 ![](http://i.imgur.com/tn6PvKj.png)
