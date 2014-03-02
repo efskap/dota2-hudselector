@@ -3,6 +3,10 @@ import os
 from subprocess import Popen, PIPE, call
 from shutil import rmtree
 
+RESTORE_DEFAULT_HUD = "[Restore default HUD]"
+
+TOOLS_DIR = 'tools/'
+
 
 def get_steam_directory():
     import winreg as registry
@@ -33,7 +37,7 @@ def extract_skin(dota_directory, skin_name):
         print('deleted %s ' % (skin_path))
     except:
         pass
-    cmd = 'HLExtract.exe -v -p "{0}" -d "{1}" -e "{2}"'.format(dota_directory + '/pak01_dir.vpk', out_path, data_path)
+    cmd = TOOLS_DIR + 'HLExtract.exe -v -p "{0}" -d "{1}" -e "{2}"'.format(dota_directory + '/pak01_dir.vpk', out_path, data_path)
     print(cmd)
     call(cmd)
     if not os.path.exists(skin_path):
@@ -56,7 +60,7 @@ def get_skin_name(filename):
 
 
 def list_skins(dota_directory):
-    cmd = 'HLExtract.exe -v -p "{0}" -l'.format(dota_directory + '/pak01_dir.vpk')
+    cmd = TOOLS_DIR + 'HLExtract.exe -v -p "{0}" -l'.format(dota_directory + '/pak01_dir.vpk')
     pipe = Popen(cmd, stdout=PIPE)
     text = pipe.communicate()[0].decode()
     lines = text.split('\n')
@@ -98,7 +102,7 @@ def main():
     while not (user_input.isdigit() and int(user_input) < len(skins)):
         user_input = input("Enter the number of the desired HUD: ")
     skin = skins[int(user_input)]
-    if skin == "[Restore Original HUD]":
+    if skin == RESTORE_DEFAULT_HUD:
         uninstall(dota_directory)
     else:
         print("Begin extracting " + skin)
