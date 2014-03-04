@@ -2,21 +2,33 @@ import sys
 import os
 from subprocess import Popen, PIPE, call
 from shutil import rmtree
-
+import platform
 RESTORE_DEFAULT_HUD = "[Restore default HUD]"
 
 TOOLS_DIR = 'tools/'
 
 
-def get_steam_directory():
-    import winreg as registry
+def is_linux():
+    return platform.system() == 'Linux'
 
-    key = registry.CreateKey(registry.HKEY_CURRENT_USER, "Software\\Valve\\Steam")
-    return registry.QueryValueEx(key, "SteamPath")[0]
+if is_linux():
+    TOOLS_DIR = 'wine ' + TOOLS_DIR #run it all through wine if we're on Linux
+
+
+def get_steam_directory():
+    if platform.system() == 'Windows':
+        from winreg import QueryValueEx, HKEY_CURRENT_USER, CreateKey
+        key = CreateKey(HKEY_CURRENT_USER, "Software\\Valve\\Steam")
+        return QueryValueEx(key, "SteamPath")[0]
+    elif platform.system() == 'Linux':
+        return '~/.local/share/Steam'
+    else:
+        raise Exception("Unsupported OS")
+
 
 
 def get_dota_directory():
-    return get_steam_directory() + '/steamapps/common/dota 2 beta/dota'
+    return get_steam_directory() + '/SteamApps/common/dota 2 beta/dota'
 
 
 def extract_skin(dota_directory, skin_name):
@@ -39,7 +51,7 @@ def extract_skin(dota_directory, skin_name):
         pass
     cmd = TOOLS_DIR + 'HLExtract.exe -v -p "{0}" -d "{1}" -e "{2}"'.format(dota_directory + '/pak01_dir.vpk', out_path, data_path)
     print(cmd)
-    call(cmd)
+    call(cmd,shell=is_linux())
     if not os.path.exists(skin_path):
         raise Exception("%s doesn't exist, but it should! Did extracting go wrong?" % (skin_path))
     else:
@@ -61,7 +73,7 @@ def get_skin_name(filename):
 
 def list_skins(dota_directory):
     cmd = TOOLS_DIR + 'HLExtract.exe -v -p "{0}" -l'.format(dota_directory + '/pak01_dir.vpk')
-    pipe = Popen(cmd, stdout=PIPE)
+    pipe = Popen(cmd, stdout=PIPE, shell=is_linux())
     text = pipe.communicate()[0].decode()
     lines = text.split('\n')
     skins = [get_skin_name(x) for x in lines if (get_skin_name(x) is not None and get_skin_name(x) != "default")]
@@ -87,7 +99,7 @@ def main():
             print("%s doesn't exist! Please pass the correct one as a parameter." % dota_directory)
             return
     else:
-        dota_directory = get_steam_directory() + '/steamapps/common/dota 2 beta/dota'
+        dota_directory = get_dota_directory()
         if not os.path.isdir(dota_directory):
             print(
                 "Dota 2 directory should be %s but it doesn't exist! Please pass the correct one as a parameter." % dota_directory)
