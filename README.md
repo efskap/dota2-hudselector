@@ -4,12 +4,13 @@ Uses the excellent [HLExtract tool](http://nemesis.thewavelength.net/index.php?p
 Requirements
 ===
 
-- Python 3
+- Python 3 (if not using binary)
+- Windows (Linux untested)
 
 
 Instructions
 ===
-Run main.py with python 3, pick your HUD, and then choose "Default HUD" from the shared content menu in-game.
+Run main.py with python 3 (Or download hudselector.zip and run the Windows binary), pick your HUD, and then choose "Default HUD" from the shared content menu in-game.
 
 Screenshots
 ===
