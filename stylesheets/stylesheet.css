@@ -174,7 +174,7 @@ a.button span {
 code, pre {
   font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal;
   color: #222;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
   font-size: 14px;
 }
 
@@ -253,7 +253,7 @@ h1 {
 h2 {
   font-size: 22px;
   font-weight: bold;
-  color: #303030;
+color: #5D5D5D;
   margin-bottom: 8px;
 } 
 
