@@ -24,8 +24,8 @@ time, mark, audio, video {
 }
 
 
-b {
-	color: #1873F2
+strong {
+	color: #1D67CF;
 }
 
 /* HTML5 display-role reset for older browsers */
