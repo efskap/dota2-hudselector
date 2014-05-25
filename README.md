@@ -13,7 +13,7 @@ Instructions
 
 Run main.py with python 3 (Or download hudselector.zip and run the Windows binary), pick your HUD, and then choose "Default HUD" from the shared content menu in-game.
 
-*YOU MUST HAVE -override_vpk IN YOUR DOTA 2 LAUNCH OPTIONS FOR THIS TO WORK*, just like with any other mod.
+**YOU MUST HAVE -override_vpk IN YOUR DOTA 2 LAUNCH OPTIONS FOR THIS TO WORK**, just like with any other mod.
 
 
 Screenshots
