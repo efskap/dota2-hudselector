@@ -92,7 +92,7 @@ def uninstall(dota_directory):
 
 
 def main():
-    print(":: Hudselector :: http://efskap.github.io/dota2-hudselector/ ::")
+    print("Dota 2 Hudselector :: http://efskap.github.io/dota2-hudselector/")
 
     #get dota 2 directory & verify
     if len(sys.argv) > 1:
