@@ -1,3 +1,6 @@
+DOES NOT WORK WITH REBORN :(
+===
+
 Replaces the default HUD with any other HUD in the game. Completely legal (and VAC-proof, etc), as it simply extracts data from Dota 2's own game files and then mods it back in.
 Uses the excellent [HLExtract tool](http://nemesis.thewavelength.net/index.php?p=35).
 
